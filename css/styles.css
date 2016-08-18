@@ -2,6 +2,13 @@ body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
 
 a { text-decoration: none; color: black; }
 
+.pull-left { float: left; }
+.pull-right { float: right; }
+
+.svg-icon-s   { width: 10px; height: 10px; vertical-align: middle; }
+.svg-icon-m   { width: 16px; height: 16px; vertical-align: middle; }
+.svg-icon-l   { width: 21px; height: 21px; vertical-align: middle; }
+
 .bg-white { background-color: white; }
 .bg-blue  { background-color: aliceblue; }
 
@@ -22,9 +29,8 @@ a { text-decoration: none; color: black; }
 
 .preview_render { padding: 20px; }
 
-.preview_container--facebook { background: blue; }
-.preview_container--twitter { }
-.preview_container--instagram { background: red; }
+.preview_container {}
+.preview_container + .preview_container { margin-top: 50px; }
 
 .twitter { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; max-width: 590px;    color: #292f33; font-size: 14px; line-height: 18px; }
 .twitter ol { position: relative; margin-left: 0; list-style: none; }
@@ -35,6 +41,23 @@ a { text-decoration: none; color: black; }
 .twitter .stream-item-header .avatar { float: left; margin-top: 3px; margin-left: -58px; width: 48px; height: 48px; border-radius: 5px; }
 .twitter .stream-item-header .fullname { font-weight: bold; }
 .twitter .stream-item-header .username { font-size: 13px; color: #8899a6; }
-.twitter .stream-item-header .time { color: #8899a6; }
+.twitter .stream-item-header .time { font-size: 13px; color: #8899a6; }
 .twitter s { text-decoration: none; }
 .twittet .TweetTextSize { font-size: 14px; line-height: 18px; white-space: pre-wrap; word-wrap: break-word; }
+.twitter .stream .stream-item-footer { display: table; width: 100%; }
+.twitter .ProfileTweet-actionList { font-size: 0; line-height: 1; margin-bottom: 2px; margin-top: 10px; }
+.twitter .stream-item-footer { font-size: 0; line-height: 1; margin-bottom: 2px; margin-top: 10px; }
+.twitter .stream-item-footer img { width: 21px; height: 21px; vertical-align: middle; margin-right: 55px; }
+
+.facebook { max-width: 500px; font-family: helvetica, arial, sans-serif; }
+.facebook .box { border: 1px solid; border-color: #e5e6e9 #dfe0e4 #d0d1d5; border-radius: 3px; padding: 12px 12px 0; background: white; }
+.facebook .img { height: 40px; width: 40px; margin-right: 7px; }
+.facebook .name { margin-top: 3px; color: #365899; cursor: pointer; text-decoration: none; font-weight: bold; font-size: 14px; line-height: 1.38; }
+.facebook .time { float: left; font-size: 12px; line-height: 16.08px; color: #999; margin-top: 2px; }
+.facebook .privacy { width: 13px; height: 12px; background-position: -13px -37px; background-image: url('../images/fb_icons.png'); background-size: 64px 183px; background-repeat: no-repeat; display: inline-block; height: 16px; width: 12px; position: relative; top: 5px; margin-left: 4px; }
+
+.facebook .content { margin-top: 14px; font-size: 14px; line-height: 1.38; }
+.facebook .footer { border-top: 1px solid #ddd; padding-top: 5px; margin-bottom: 2px; margin-top: 11px; }
+.facebook .footer img { width: 248px; }
+
+

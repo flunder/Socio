@@ -1,9 +1,9 @@
 <html>
 
     <head>
+        <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/normalise.css" type="text/css" media="screen">
-        
     </head>
 
     <body>
@@ -23,13 +23,25 @@
                 </div>
 
                 <script type="text/template" class="template_facebook">
-                    <div class="preview_container preview_container--facebook">
-                        {{text}}
+                    <div class="preview_container facebook">
+                        <div class="box">
+                            <img class="img pull-left" src="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-1/p100x100/12096282_1085118568168070_5347081712272386636_n.png?oh=2a0d154af2fd28474289f2b5970178e6&amp;oe=58123E66" alt="">
+                            <div class="name">Sick Chirpse</div>
+                            <div class="time">6 hrs · </div>
+                            <div class="privacy"></div>
+                            <div class="content">
+                                {{text}}
+                            </div>
+                            <div class="footer">
+                                <img src="images/fb_footer.png" />
+                            </div>
+
+                        </div>
                     </div>
                 </script>
 
                 <script type="text/template" class="template_twitter">
-                    <div class="preview_container preview_container--twitter twitter">
+                    <div class="preview_container twitter">
                         <ol>
                             <li>
                                 <div class="tweet">
@@ -39,13 +51,18 @@
                                             <strong class="fullname js-action-profile-name show-popup-with-id">Fact</strong>
                                             <span class="username js-action-profile-name"><s>@</s><b>Fact</b></span>
                                             <small class="time">
-                                                <span>30s</span>
+                                                <span>· 30s</span>
                                             </small>
                                         </div>
                                         <div class="js-tweet-text-container">
                                             <p class="TweetTextSize js-tweet-text tweet-text">
                                                 {{text}}
                                             </p>
+                                        </div>
+                                        <div class="stream-item-footer">
+                                            <img src="svg/twitter_reply.svg" class="svg-icon-l" />
+                                            <img src="svg/twitter_retweet.svg" class="svg-icon-l" />
+                                            <img src="svg/twitter_heart.svg" class="svg-icon-l" />
                                         </div>
                                     </div>
                                 </div>
@@ -55,7 +72,7 @@
                 </script>
 
                 <script type="text/template" class="template_instagram">
-                    <div class="preview_container preview_container--instagram">
+                    <div class="preview_container instagram">
                         {{text}}
                     </div>
                 </script>
@@ -73,5 +90,5 @@
     <script src="js/mustache.min.js" type="text/javascript"></script>
     <script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/socio.js" type="text/javascript" charset="utf-8"></script>
-    
+
 </html>
