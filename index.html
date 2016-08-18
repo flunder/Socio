@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/normalise.css" type="text/css" media="screen">
+        
     </head>
 
     <body>
@@ -28,8 +29,28 @@
                 </script>
 
                 <script type="text/template" class="template_twitter">
-                    <div class="preview_container preview_container--twitter">
-                        {{text}}
+                    <div class="preview_container preview_container--twitter twitter">
+                        <ol>
+                            <li>
+                                <div class="tweet">
+                                    <div class="content">
+                                        <div class="stream-item-header">
+                                            <img class="avatar js-action-profile-avatar" src="https://pbs.twimg.com/profile_images/2969881129/ab1629f03d646a755830fc704f690b8b_bigger.jpeg" alt="">
+                                            <strong class="fullname js-action-profile-name show-popup-with-id">Fact</strong>
+                                            <span class="username js-action-profile-name"><s>@</s><b>Fact</b></span>
+                                            <small class="time">
+                                                <span>30s</span>
+                                            </small>
+                                        </div>
+                                        <div class="js-tweet-text-container">
+                                            <p class="TweetTextSize js-tweet-text tweet-text">
+                                                {{text}}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
                     </div>
                 </script>
 
@@ -48,8 +69,9 @@
 
     </body>
 
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js" type="text/javascript"></script>
+    <script src="js/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="js/mustache.min.js" type="text/javascript"></script>
+    <script src="js/cookie.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/socio.js" type="text/javascript" charset="utf-8"></script>
     
 </html>

@@ -46,10 +46,11 @@ Previewer = {
         this.cacheDom();
         this.bindEvents();
         this.settings();
+        this.load();
     },
     
     settings: function(){
-
+        this.selectedNetworks = [];
     },
 
     cacheDom: function(){
@@ -84,10 +85,10 @@ Previewer = {
     },
 
     choose: function(e){
-        var $button = $(e.target).toggleClass('isActive');;
-
+        var $button = $(e.target).toggleClass('isActive');
         this.socialNetworks[$button.data('socialnetwork')].preview = $button.is('.isActive') ? true : false;
         this.render();
+        this.save();
     },
 
     render: function(){
@@ -102,6 +103,7 @@ Previewer = {
         })
 
         this.$render.html(html);
+        this.save();
 
     },
 
@@ -109,9 +111,33 @@ Previewer = {
         return {
             text: Composer.$textarea.val()
         }
+    },
+
+    /*
+        This is messy
+    */
+
+    save: function(){
+        this.selectedNetworks = $.map(Previewer.$chooserLink.filter('.isActive'), function(a){
+                                    return $(a).data('socialnetwork') 
+                                });
+
+        Cookies.set('chosen', JSON.stringify(this.selectedNetworks.join()), { expires: 365 });
+    },
+
+    load: function(){
+        this.selectedNetworks = Cookies.get('chosen') ? JSON.parse(Cookies.get('chosen')).split(',') : [];
+
+        var that = this;
+
+        $.each(this.selectedNetworks, function(i, node){
+            $('[data-socialnetwork='+node+']').addClass('isActive');
+            that.socialNetworks[node].preview = true;
+        })
+
+        this.render();
     }
-    
-    
+
 }
 
 $(function(){

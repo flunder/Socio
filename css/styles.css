@@ -1,3 +1,5 @@
+body { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+
 a { text-decoration: none; color: black; }
 
 .bg-white { background-color: white; }
@@ -19,3 +21,20 @@ a { text-decoration: none; color: black; }
 ----------------------------------- */
 
 .preview_render { padding: 20px; }
+
+.preview_container--facebook { background: blue; }
+.preview_container--twitter { }
+.preview_container--instagram { background: red; }
+
+.twitter { font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; max-width: 590px;    color: #292f33; font-size: 14px; line-height: 18px; }
+.twitter ol { position: relative; margin-left: 0; list-style: none; }
+.twitter li { background: #fff; background-clip: padding-box; }
+.twitter .tweet { border: 1px solid #e1e8ed; cursor: pointer; position: relative; min-height: 51px; padding: 9px 12px; }
+.twitter .content { margin-left: 58px; }
+.twitter .stream-item-header { }
+.twitter .stream-item-header .avatar { float: left; margin-top: 3px; margin-left: -58px; width: 48px; height: 48px; border-radius: 5px; }
+.twitter .stream-item-header .fullname { font-weight: bold; }
+.twitter .stream-item-header .username { font-size: 13px; color: #8899a6; }
+.twitter .stream-item-header .time { color: #8899a6; }
+.twitter s { text-decoration: none; }
+.twittet .TweetTextSize { font-size: 14px; line-height: 18px; white-space: pre-wrap; word-wrap: break-word; }
