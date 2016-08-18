@@ -1,0 +1,21 @@
+a { text-decoration: none; color: black; }
+
+.bg-white { background-color: white; }
+.bg-blue  { background-color: aliceblue; }
+
+.compose { }
+.compose_textarea { width: 100%; height: 100%; font-size: 2rem; border: none; padding: 20px; }
+
+.flex { display: flex; }
+.flex-column { flex: 1; }
+
+/* Chooser
+----------------------------------- */
+
+.preview_chooser { padding: 20px; }
+.preview_chooser .isActive { color: orange; }
+
+/* Render
+----------------------------------- */
+
+.preview_render { padding: 20px; }

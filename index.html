@@ -1,0 +1,55 @@
+<html>
+
+    <head>
+        <link rel="stylesheet" href="css/styles.css" type="text/css" media="screen">
+        <link rel="stylesheet" href="css/normalise.css" type="text/css" media="screen">
+    </head>
+
+    <body>
+
+        <main class="flex">
+
+            <section class="compose flex-column bg-white">
+                <textarea class="compose_textarea" placeholder="Hello this is dog!"></textarea>
+            </section>
+
+            <section class="preview flex-column bg-blue">
+
+                <div class="preview_chooser">
+                    <a href="#" data-socialNetwork="facebook">FB</a>
+                    <a href="#" data-socialNetwork="twitter">TW</a>
+                    <a href="#" data-socialNetwork="instagram">IG</a>
+                </div>
+
+                <script type="text/template" class="template_facebook">
+                    <div class="preview_container preview_container--facebook">
+                        {{text}}
+                    </div>
+                </script>
+
+                <script type="text/template" class="template_twitter">
+                    <div class="preview_container preview_container--twitter">
+                        {{text}}
+                    </div>
+                </script>
+
+                <script type="text/template" class="template_instagram">
+                    <div class="preview_container preview_container--instagram">
+                        {{text}}
+                    </div>
+                </script>
+
+                <div class="preview_render">
+                </div>
+
+            </section>
+
+        </main>
+
+    </body>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js" type="text/javascript"></script>
+    <script src="js/socio.js" type="text/javascript" charset="utf-8"></script>
+    
+</html>
