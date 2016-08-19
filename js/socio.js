@@ -1,3 +1,56 @@
+App = {
+    
+    init: function(){ 
+
+        var that = this;
+
+        this.templates = [
+            "templates/_facebook.html",
+            "templates/_instagram.html",
+            "templates/_twitter.html"
+        ]
+
+        this.loadTemplates().done(function(templates){
+
+            $('.preview').prepend(templates);
+
+            Composer.init();
+            Previewer.init();
+        });
+
+    },
+
+    loadTemplates: function(){
+
+        var deferred = $.Deferred();
+
+        var i = 0,
+            total = this.templates.length,
+            combined = "";
+
+        $.each(this.templates, function(i, t){
+
+            $.get(t, function(html) {
+
+                combined += html;
+
+                i++;
+
+                if (i == total){ 
+                    deferred.resolve(combined); 
+                }
+
+            })
+        })
+
+        return deferred.promise();
+
+    }
+
+}
+
+
+
 /* 
 
     Compose a message allowing for these types of input:
@@ -21,7 +74,7 @@ Composer = {
     },
 
     bindEvents: function(){
-        this.$textarea.on('keydown', this.render.bind(this));
+        this.$textarea.on('keyup', this.render.bind(this));
     },
 
     render: function(){
@@ -60,22 +113,18 @@ Previewer = {
         this.$render  = this.$el.find('.preview_render');
 
         this.socialNetworks = {
-
             facebook: {
                 preview:  false,
                 template: this.$el.find('.template_facebook').html()
             },
-
             twitter: {
                 preview:  false,
                 template: this.$el.find('.template_twitter').html()
             },
-
             instagram: {
                 preview:  false,
                 template: this.$el.find('.template_instagram').html()
             }
-
         }
 
     },
@@ -93,12 +142,13 @@ Previewer = {
 
     render: function(){
 
-        var html = "";
-        var data = this.getContent();
+        var html = ""; 
+        var data = "";
+        var that = this;
 
         $.each(this.socialNetworks, function(i, n){
             if (n.preview) {
-                html += Mustache.render(n.template, data);
+                html += Mustache.render(n.template, that.getContent(i));
             }
         })
 
@@ -107,9 +157,21 @@ Previewer = {
 
     },
 
-    getContent: function(){
+    getContent: function(network){
+        
+        this.content_text = Composer.$textarea.val();
+
+        if (network == "twitter") {
+
+            var regex = /([@|#]\w+)/ig;
+
+            this.content_text = this.content_text.replace(regex, '<a href="#">$1</a>')
+
+        }
+        
+        
         return {
-            text: Composer.$textarea.val()
+            text: this.content_text
         }
     },
 
@@ -141,6 +203,5 @@ Previewer = {
 }
 
 $(function(){
-    Composer.init();
-    Previewer.init();
+    App.init();
 })
